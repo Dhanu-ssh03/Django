@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Student Details</h1>
+<table>
+    <thead>
+        <th>Student No</th>
+        <th>Student Name</th>
+        <th>Student Class</th>
+        <th>Student Address</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </thead>
+    <tr>
+        {% for st in student %}
+        <td>{{st.sno}}</td>
+        <td>{{ st.sname}}</td>
+        <td>{{ st.sclass}}</td>
+        <td>{{ st.saddress}}</td>
+        <td><a href="/Update/{{st.id}}">Update</a></td>
+        <td><a href="/Delete/{{st.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<button type="submit"><a href="{% url 'form' %}">Insert Data</a></button>
+
+</body>  
+</html>  
